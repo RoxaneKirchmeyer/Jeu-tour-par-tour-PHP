@@ -10,6 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['attaque_joueur1'])) {
     
     // Application des dégâts au joueur 2
     $joueur2_pv -= $degats;
+
+    $attaque_joueur1_disabled = 'disabled';
     
     // Vérification si le joueur 2 est mort
     if ($joueur2_pv <= 0) {
@@ -25,6 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['attaque_joueur2'])) {
     
     // Application des dégâts au joueur 1
     $joueur1_pv -= $degats;
+
+    $attaque_joueur2_disabled = 'disabled';
     
     // Vérification si le joueur 1 est mort
     if ($joueur1_pv <= 0) {
@@ -46,15 +50,18 @@ if (!isset($fin_du_jeu) || !$fin_du_jeu) {
 
 <h1>Combat au tour par tour</h1>
 <form method="post">
-    <button type="submit" name="attaque_joueur1">Attaquer Joueur 2</button>
+    <button type="submit" name="attaque_joueur1" <?php echo isset($attaque_joueur1_disabled) ? 'disabled' : ''; ?>>Attaquer Joueur 2</button>
     <?php echo $joueur1_pv_hidden; ?>
     <?php echo $joueur2_pv_hidden; ?>
 </form>
+
+
 <form method="post">
-    <button type="submit" name="attaque_joueur2">Attaquer Joueur 1</button>
+    <button type="submit" name="attaque_joueur2" <?php echo isset($attaque_joueur2_disabled) ? 'disabled' : ''; ?>>Attaquer Joueur 1</button>
     <?php echo $joueur1_pv_hidden; ?>
     <?php echo $joueur2_pv_hidden; ?>
 </form>
+
 <div>
     <?php 
     // Affichage des points de vie

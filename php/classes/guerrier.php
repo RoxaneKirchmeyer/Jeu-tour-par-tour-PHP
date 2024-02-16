@@ -1,5 +1,4 @@
 <?php
-
 class Guerrier extends Personnage
 {
     public function attakSpec()
@@ -7,3 +6,4 @@ class Guerrier extends Personnage
         return "Execution";
     }
 }
+?>

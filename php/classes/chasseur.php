@@ -1,5 +1,4 @@
 <?php
-
 class Chasseur extends Personnage
 {
     public function attakSpec()
@@ -7,3 +6,4 @@ class Chasseur extends Personnage
         return "Flèche explosive";
     }
 }
+?>

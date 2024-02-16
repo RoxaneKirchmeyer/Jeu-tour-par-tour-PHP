@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 class Pretre extends Personnage
 {
     public function attakSpec()
@@ -6,4 +7,4 @@ class Pretre extends Personnage
         return "Flammes sacrées";
     }
 }
-
+?>

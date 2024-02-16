@@ -1,5 +1,4 @@
 <?php
-
 class Mage extends Personnage
 {
     public function attakSpec()
@@ -7,3 +6,4 @@ class Mage extends Personnage
         return "Explosion pyrotechnique";
     }
 }
+?>

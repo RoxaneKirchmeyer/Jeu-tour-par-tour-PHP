@@ -15,6 +15,7 @@
             $this->pa = $pa;
         }
 
+    
         // Getters
         public function getPv()
         {
@@ -45,10 +46,13 @@
 
         // Methods
         public function degats($ennemi){
-            $ennemi->pv = $ennemi->pv - ($this->pa - $ennemi->def);
+            $ennemi->pv = $ennemi->pv - (($this->pa)-($this->pa)*($ennemi->def)/100);
         }
 
-
+        public function estVivant()
+        {
+            return $this->pv > 0;
+        }
 
 
         public function conc()
